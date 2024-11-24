@@ -35,6 +35,10 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>Order.UK Copyright 2024, All Rights Reserved.</p>
+        <p>Privacy Policy</p>
+        <p>Terms</p>
+        <p>Pricing</p>
+        <p>Do not sell or share my personal information</p>
       </div>
     </footer>
   );

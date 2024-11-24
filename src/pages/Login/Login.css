@@ -1,0 +1,112 @@
+/* Login Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 2px;
+    margin-top: 0px;
+}
+
+/* Main Content Container */
+.login-content {
+    display: flex;
+    width: 80%; /* Center the form and image in a narrower container */
+    max-width: 1200px; /* Add a maximum width */
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 2px;
+}
+
+/* Left Container */
+.login-left {
+    flex: 1; /* Take up 50% of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Login Form Styling */
+.login-form {
+    width: 100%; /* Take full width of the left container */
+}
+
+.login-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.highlight {
+    color: orange;
+}
+
+/* Styling for Inputs and Buttons */
+.input-label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.forgot-password {
+    color: orange;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: medium;
+    margin-left: 400px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.signup-text {
+    margin-top: 20px;
+    color: #666;
+    margin-left: 150px;
+}
+
+.signup-link {
+    color: orange;
+    text-decoration: none;
+}
+
+/* Right Container */
+.login-right {
+    flex: 1; /* Take up 50% of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Image Styling */
+.login-image img {
+    width: 100%; /* Fit the container */
+    height:auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image fits well without cropping */
+    margin-top: -20px;
+    padding: 5%;
+}

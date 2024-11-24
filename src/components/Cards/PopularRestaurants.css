@@ -1,0 +1,45 @@
+.popular-restaurants {
+  margin-bottom: 40px;
+  padding: 20px; /* Optional: Adds spacing around the section */
+}
+
+.popular-restaurants h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.restaurant-cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Allows horizontal scrolling for smaller screens */
+  padding: 10px 0;
+}
+
+.restaurant-card {
+  width: 200px; /* Consistent width for all cards */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  overflow: hidden; /* Ensures the content stays within the card */
+  background: #f9f9f9; /* Light background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+  flex-shrink: 0; /* Prevents cards from shrinking */
+  cursor: pointer;
+}
+
+.restaurant-card img {
+  width: 100%; /* Ensures the image spans the width of the card */
+  height: 160px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures the image is properly cropped */
+  display: block; /* Removes any inline space below the image */
+  align-items:center ;
+}
+
+.restaurant-card h3 {
+  margin: 0; /* Removes any default margin */
+  font-size: 1rem;
+  color: #fff; /* White text color */
+  padding: 10px; /* Padding inside the text */
+  background: #FC8A06; /* Full orange background */
+  text-align: center;
+}

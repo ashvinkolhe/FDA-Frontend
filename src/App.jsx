@@ -24,6 +24,7 @@ const App = () => {
       {/* Conditionally render Header only if not on Login or Register page */}
       {!isAuthPage && <Header />}
       <Routes>
+         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />

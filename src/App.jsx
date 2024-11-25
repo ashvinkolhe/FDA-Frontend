@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
@@ -24,9 +24,17 @@ const App = () => {
       {/* Conditionally render Header only if not on Login or Register page */}
       {!isAuthPage && <Header />}
       <Routes>
-         <Route path="/" element={<Login />} />
+        {/* Blank page for root URL */}
+        <Route path="/" element={null} />
+        
+        {/* Redirect root URL to /login */}
+        <Route path="/" element={<Navigate to="/login" />} />
+        
+        {/* Authentication Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        {/* Main Application Routes */}
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/cart" element={<CartManagement />} />

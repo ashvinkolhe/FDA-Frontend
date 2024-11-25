@@ -24,8 +24,6 @@ const App = () => {
       {/* Conditionally render Header only if not on Login or Register page */}
       {!isAuthPage && <Header />}
       <Routes>
-        {/* Blank page for root URL */}
-        <Route path="/" element={null} />
         
         {/* Redirect root URL to /login */}
         <Route path="/" element={<Navigate to="/login" />} />

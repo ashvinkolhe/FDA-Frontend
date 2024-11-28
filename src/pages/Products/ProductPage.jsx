@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import BannerPP from "../../assets/BannerPP.svg";
 import ProductCard from "../../components/Cards/ProductCard";
 import CartModal from "../../components/Modal/CartModal";
+import LocationMap from "../../components/AboutUs/LocationMap";
 import "./ProductPage.css";
 
 const ProductPage = () => {
@@ -87,9 +88,9 @@ const ProductPage = () => {
           </section>
 
           <section className="product-category">
-            <h2>Pizzas</h2>
+            <h2>Cold Drinks</h2>
             <div className="food-cards">
-              {getItemsByCategory("pizza").map((item) => (
+              {getItemsByCategory("cold drinks").map((item) => (
                 <ProductCard
                   key={item.id}
                   {...item}
@@ -104,6 +105,9 @@ const ProductPage = () => {
       {cartItems.length > 0 && (
         <CartModal cartItems={cartItems} onRemoveItem={handleRemoveFromCart} />
       )}
+
+      <LocationMap />
+
     </div>
   );
 };

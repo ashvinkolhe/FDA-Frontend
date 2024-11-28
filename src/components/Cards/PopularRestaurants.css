@@ -3,7 +3,7 @@
   padding: 20px; /* Optional: Adds spacing around the section */
 }
 
-.popular-restaurants h2 {
+.popular-restaurants .popular-restaurants-title {
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: #333;

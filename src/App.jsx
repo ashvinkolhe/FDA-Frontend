@@ -11,7 +11,7 @@ import CartManagement from "./pages/Cart/CartManagement";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import PaymentPage from "./pages/Payment/PaymentPage";
 import ProfilePage from "./pages/Profile/ProfilePage";
-import OrderSuccessPage from "./pages/OrderSuccess/OrderSuccessPage";
+import OrderCompletedPage from "./pages/OrderSuccess/OrderCompletedPage";
 
 const App = () => {
   const location = useLocation(); // Get the current location
@@ -39,7 +39,7 @@ const App = () => {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/order-success" element={<OrderSuccessPage />} />
+        <Route path="/order" element={<OrderCompletedPage />} />
       </Routes>
       <Footer />
     </>

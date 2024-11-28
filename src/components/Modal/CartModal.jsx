@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import "./CartModal.css";
 
-const CartModal = ({ cartItems = [], onRemoveItem, onCheckout }) => {
+const CartModal = ({ cartItems = [], onRemoveItem }) => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   // Calculate unique items and their quantities
   const uniqueItems = cartItems.reduce((acc, item) => {
     const existingItem = acc.find((cartItem) => cartItem.id === item.id);
@@ -14,6 +17,15 @@ const CartModal = ({ cartItems = [], onRemoveItem, onCheckout }) => {
     }
     return acc;
   }, []);
+
+  // Redirect to the checkout page
+  const handleCheckout = () => {
+    if (uniqueItems.length === 0) {
+      alert("Your cart is empty!");
+    } else {
+      navigate("/checkout"); // Redirect to the checkout page
+    }
+  };
 
   return (
     <div className="cart-modal">
@@ -60,7 +72,7 @@ const CartModal = ({ cartItems = [], onRemoveItem, onCheckout }) => {
         <button
           className="checkout-button"
           disabled={uniqueItems.length === 0}
-          onClick={onCheckout}
+          onClick={handleCheckout}
         >
           Checkout
         </button>

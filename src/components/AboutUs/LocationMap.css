@@ -1,0 +1,39 @@
+.location-map {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60vh; /* Banner height */
+  }
+  
+  .details-panel {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .details-panel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .details-panel p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .map-container {
+    flex: 2;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures the map fits within the rounded border */
+    position: relative;
+  }
+  

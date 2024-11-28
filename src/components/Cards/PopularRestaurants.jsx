@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
@@ -23,7 +24,7 @@ const restaurants = [
   { id: 6, name: "Shaurma 1", image: Shaurma },
 ];
 
-const PopularRestaurants = () => {
+const PopularRestaurants = ({ title }) => {
   const navigate = useNavigate(); // Hook for navigation
 
   const handleCardClick = () => {
@@ -33,7 +34,7 @@ const PopularRestaurants = () => {
 
   return (
     <div className="popular-restaurants">
-      <h2>Popular Restaurants</h2>
+      <h2 className="popular-restaurants-title">{title}</h2>
       <div className="restaurant-cards">
         {restaurants.map((restaurant) => (
           <div

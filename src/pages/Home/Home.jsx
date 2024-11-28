@@ -68,7 +68,9 @@ const Home = () => {
       <PopularCategories/>  
 
       {/* Popular Restaurants Section */}
-      <PopularRestaurants/>
+      
+      <PopularRestaurants title="Popular Restaurants" />
+
 
           <section className="Order-section">
             <img src={OrderingApp} alt="OrderingApp" />

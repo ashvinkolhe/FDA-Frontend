@@ -3,7 +3,7 @@ import React from "react";
 import "./Home.css"; // You can include this CSS or create a new one for the Home page
 import HomeBanner1 from "../../assets/HomeBanner1.svg";
 import HomeBanner2 from "../../assets/HomeBanner2.svg";
-import OrderingApp from "../../assets/OrderingApp.svg";
+import OrderingApp from "../../assets/OrderingAPP.svg";
 import ExclusiveDeals from "../../components/Cards/ExclusiveDeals";
 import PopularCategories from "../../components/Cards/PopularCategories";
 import PopularRestaurants from "../../components/Cards/PopularRestaurants";

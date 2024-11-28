@@ -1,0 +1,72 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import React from "react";
+import "./CartModal.css";
+
+const CartModal = ({ cartItems = [], onRemoveItem, onCheckout }) => {
+  // Calculate unique items and their quantities
+  const uniqueItems = cartItems.reduce((acc, item) => {
+    const existingItem = acc.find((cartItem) => cartItem.id === item.id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      acc.push({ ...item, quantity: 1 });
+    }
+    return acc;
+  }, []);
+
+  return (
+    <div className="cart-modal">
+      <h2 className="cart-title">My Basket</h2>
+      <div className="cart-items">
+        {uniqueItems.length === 0 ? (
+          <p>Your cart is empty</p>
+        ) : (
+          uniqueItems.map((item) => (
+            <div key={item.id} className="cart-item">
+              <div className="cart-item-info">
+                <span className="cart-item-title">
+                  {item.title} {item.quantity > 1 && `x${item.quantity}`}
+                </span>
+                <span className="cart-item-price">₹{item.price}</span>
+              </div>
+              <button
+                className="remove-item"
+                onClick={() => onRemoveItem(item.id)}
+              >
+                X
+              </button>
+            </div>
+          ))
+        )}
+      </div>
+      <div className="coupon-section">
+        <label htmlFor="coupon-code">Choose your free item..</label>
+        <input
+          type="text"
+          id="coupon-code"
+          className="rounded-input"
+          placeholder="Apply Coupon Code here"
+        />
+      </div>
+      <div className="cart-summary">
+        <div className="cart-total">
+          Total to Pay: ₹
+          {uniqueItems.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+          )}
+        </div>
+        <button
+          className="checkout-button"
+          disabled={uniqueItems.length === 0}
+          onClick={onCheckout}
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default CartModal;

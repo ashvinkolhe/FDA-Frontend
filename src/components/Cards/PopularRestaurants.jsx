@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./PopularRestaurants.css";
 
 // Manually importing images
@@ -23,12 +24,23 @@ const restaurants = [
 ];
 
 const PopularRestaurants = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
+  const handleCardClick = () => {
+    // Redirect to the product page
+    navigate("/products");
+  };
+
   return (
     <div className="popular-restaurants">
       <h2>Popular Restaurants</h2>
       <div className="restaurant-cards">
         {restaurants.map((restaurant) => (
-          <div className="restaurant-card" key={restaurant.id}>
+          <div
+            className="restaurant-card"
+            key={restaurant.id}
+            onClick={handleCardClick} // Navigate to the product page on click
+          >
             <img src={restaurant.image} alt={restaurant.name} />
             <h3>{restaurant.name}</h3>
           </div>

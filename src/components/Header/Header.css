@@ -85,3 +85,7 @@
 .greeting {
   margin-right: 1rem;
 }
+
+.user-actions{
+  cursor: pointer;
+}

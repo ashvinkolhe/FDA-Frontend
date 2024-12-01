@@ -1,16 +1,27 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-/* Header.jsx */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
-const Header = ({ username }) => {
+const Header = () => {
+  const [username, setUsername] = useState(null); // State to store username (first name)
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Check if the username (first name) is stored in localStorage
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []); // Run this only once after component mounts
+
   const handleLogout = () => {
-    // On logout, redirect to home
-    navigate("/");
+    // Clear the localStorage and redirect to login page
+    localStorage.removeItem('username');
+    localStorage.removeItem('token');
+    setUsername(null); // Clear the username state
+    navigate("/login");
   };
 
   return (
@@ -34,7 +45,7 @@ const Header = ({ username }) => {
       {/* Main Header Section */}
       <header className="main-header">
         <div className="logo" onClick={() => navigate("/home")}>
-          Order<span className="logo-accent" >UK</span>
+          Order<span className="logo-accent">UK</span>
         </div>
         <nav className="navigation">
           <ul>
@@ -67,8 +78,8 @@ const Header = ({ username }) => {
         </nav>
         <div className="actions">
           {username ? (
-            <div className="user-actions">
-              <span className="greeting">Hey {username}</span>
+            <div className="user-actions" onClick={() => navigate("/profile")}>
+              <span className="greeting">Hey {username.charAt(0).toUpperCase() + username.slice(1)}</span>
               <button className="logout-btn" onClick={handleLogout}>
                 Logout
               </button>

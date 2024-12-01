@@ -1,53 +1,87 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .logo span {
-    color: orange;
-  }
-  
-  .navigation ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navigation ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-  }
-  
-  .actions {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .search-bar {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .login-btn {
-    padding: 0.5rem 1rem;
-    background-color: orange;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+/* Header.css */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.promo {
+  font-weight: bold;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.change-location {
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.change-location:hover {
+  text-decoration: underline;
+}
+
+.cart-button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo-accent {
+  color: orange;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.login-btn,
+.logout-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.greeting {
+  margin-right: 1rem;
+}

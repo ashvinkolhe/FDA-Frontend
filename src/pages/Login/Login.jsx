@@ -19,6 +19,7 @@ const Login = () => {
   
     try {
       const response = await axios.post('https://fda-backend-64r7.onrender.com/api/auth/login', {
+      // const response = await axios.post('http://localhost:5000/api/auth/login', {
         email,
         password,
       }, {

@@ -15,23 +15,31 @@ const KnowMore = () => {
     <div className="know-more">
       {/* Top Section */}
       <div className="top-section">
-        <div className="card partner-card">
-          <img src={partnerImage} alt="Partner with us" />
-          <div className="card-info">
-            <h2>Partner with us</h2>
-            <p>Earn more with lower fees</p>
-            <button>Get Started</button>
-          </div>
-        </div>
-        <div className="card rider-card">
-          <img src={riderImage} alt="Ride with us" />
-          <div className="card-info">
-            <h2>Ride with us</h2>
-            <p>Avail exclusive perks</p>
-            <button>Get Started</button>
-          </div>
-        </div>
+  <div className="card partner-card">
+    <div className="card-info">
+      <div className="card-header">
+        <h4 className="offer-text">Earn more with lower fees</h4>
+        <p className="signup-text">Sign up as a business</p>
       </div>
+      <h2>Partner with us</h2>
+      <button>Get Started</button>
+    </div>
+    <img src={partnerImage} alt="Partner with us" />
+  </div>
+
+  <div className="card rider-card">
+    <div className="card-info">
+      <div className="card-header">
+        <h4 className="offer-text">Avail exclusive perks</h4>
+        <p className="signup-text">Sign up as a rider</p>
+      </div>
+      <h2>Ride with us</h2>
+      <button >Get Started</button>
+    </div>
+    <img src={riderImage} alt="Ride with us" />
+  </div>
+</div>
+
 
       {/* Bottom Section */}
       <div className="bottom-section">
@@ -44,11 +52,7 @@ const KnowMore = () => {
 
         {/* FAQ Section */}
         <div className="faq-section">
-          <button>How does Order.UK work?</button>
-          <button>What payment methods are accepted?</button>
-          <button>Can I track my order in real-time?</button>
-          <button>Are there any special discounts or promotions available?</button>
-          <button>Is Order.UK available in my area?</button>
+
         </div>
 
         {/* Right Side CTA Cards */}

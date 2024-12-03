@@ -6,6 +6,7 @@ import "./DiscountCard.css";
 import DiscountCard1 from "../../assets/DiscountCard1.svg";
 import DiscountCard2 from "../../assets/DiscountCard2.svg";
 import DiscountCard3 from "../../assets/DiscountCard3.svg";
+import AddToCart from "../../assets/AddToCart.svg";
 
 const DiscountCards = () => {
   return (
@@ -17,11 +18,11 @@ const DiscountCards = () => {
           <div className="discount-badge">-40%</div>
           <div className="card-details">
             <div className="card-description">
-              <h3>Chef Burgers London</h3>
-              <p>First Order Discount</p>
+              <p className="card-description-location">McDonald’s East London</p>
+              <h1>First Order Discount</h1> {/* Changed from h3 to h1 */}
             </div>
-            <div className="add-to-cart-btn">
-              <span>+</span>
+            <div className="product-card-add-to-cart">
+              <img src={AddToCart} alt="Add to cart" />
             </div>
           </div>
         </div>
@@ -32,11 +33,11 @@ const DiscountCards = () => {
           <div className="discount-badge">-20%</div>
           <div className="card-details">
             <div className="card-description">
-              <h3>Grand Ai Cafe London</h3>
-              <p>First Order Discount</p>
+              <p className="card-description-location">McDonald’s East London</p>
+              <h1>Vegan Discount</h1> {/* Changed from h3 to h1 */}
             </div>
-            <div className="add-to-cart-btn">
-              <span>+</span>
+            <div className="product-card-add-to-cart">
+              <img src={AddToCart} alt="Add to cart" />
             </div>
           </div>
         </div>
@@ -47,11 +48,11 @@ const DiscountCards = () => {
           <div className="discount-badge">-17%</div>
           <div className="card-details">
             <div className="card-description">
-              <h3>Butterbrot Cafe London</h3>
-              <p>First Order Discount</p>
+              <p className="card-description-location">McDonald’s East London</p>
+              <h1>Free Ice Cream Offer</h1> {/* Changed from h3 to h1 */}
             </div>
-            <div className="add-to-cart-btn">
-              <span>+</span>
+            <div className="product-card-add-to-cart">
+              <img src={AddToCart} alt="Add to cart" />
             </div>
           </div>
         </div>

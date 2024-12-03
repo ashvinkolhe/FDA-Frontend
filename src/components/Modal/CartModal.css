@@ -66,17 +66,37 @@
   
   .coupon-section {
     margin: 15px 0;
-    border: 2px solid #fff; /* White border around each item */
-    border-radius: 30px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background for contrast */ 
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;  /* Stack the labels vertically */
+    gap: 10px;  /* Optional: space between labels */
   }
-
-  .coupon-section .coupon-section2 {
-    margin: 15px 0;
-    border: 2px solid #fff; /* White border around each item */
-    border-radius: 30px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background for contrast */ 
+  
+  .coupon-section2 {
+    display: flex;
+    align-items: center;  /* Align label text and image in a row */
+    border: 2px solid #F6F6F6;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;  /* Ensure the label takes full width */
   }
+  
+  .coupon-section2 img {
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;  /* Space between label text and image */
+  }
+  
+  .coupon-section2 input {
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    width: 80%;  /* Adjust width as needed */
+  }
+  
   
   .coupon-section label {
     font-size: 14px;
@@ -101,12 +121,12 @@
   }
   
   .cart-total {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     background-color: orange;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-top: 25px;
     text-align: center;
     color: white;
   }
@@ -115,10 +135,10 @@
     width: 100%;
     background-color: green;
     color: white;
-    padding: 10px;
+    padding: 5px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
   }
   
@@ -176,4 +196,53 @@
   font-weight: bold; /* Makes the number bold */
   margin-left: 5px; /* Space between the item name and quantity */
   font-size: 12px; /* Font size */
+}
+
+.delivery-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Reduce the gap between sections */
+}
+
+.delivery-section-left,
+.delivery-section-right {
+  flex: 1;
+  padding: 10px; /* Reduce padding */
+  text-align: center;
+  border: 1px solid #ddd; /* Slightly thinner border */
+  border-radius: 5px; /* Smaller corner radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.delivery-section-left img,
+.delivery-section-right img {
+  display: block;
+  margin: 0 auto 5px; /* Reduce margin below the image */
+  width: 30px; /* Smaller image size */
+  height: auto;
+}
+
+.delivery-section-left h3,
+.delivery-section-right h3 {
+  font-size: 14px; /* Smaller font size */
+  font-weight: bold;
+  margin: 5px 0 3px; /* Reduce margin around the heading */
+}
+
+.delivery-section-left p,
+.delivery-section-right p {
+  font-size: 12px; /* Smaller font size for paragraph */
+  color: #555;
+}
+
+.delivery-section-left.selected,
+.delivery-section-right.selected {
+  background-color: #f0f0f0;
+  border-color: #007bff;
+}
+
+.delivery-section-left.unselected,
+.delivery-section-right.unselected {
+  opacity: 0.5;
 }

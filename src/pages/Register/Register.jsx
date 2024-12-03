@@ -44,6 +44,7 @@ const Register = () => {
 
     try {
       const response = await axios.post('https://fda-backend-64r7.onrender.com/api/auth/register', formData);
+      // const response = await axios.post('http://localhost:5000/api/auth/register', formData);
       console.log('Registration successful:', response);
 
       // Store JWT token in localStorage after successful registration

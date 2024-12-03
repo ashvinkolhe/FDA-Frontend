@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -10,20 +11,21 @@ const Profile = () => {
     gender: '',
     country: '',
     image: '', // Image URL will be fetched from the backend
+    paymentMethods: [], // Assuming payment methods are part of the profile
   });
   const [isEditable, setIsEditable] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [imageFile, setImageFile] = useState(null); // State for image file
 
   // Fetch profile data when component mounts
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        // Assuming you're storing the user token in local storage after login
         const token = localStorage.getItem('userToken');
         if (token) {
           const response = await axios.get('/api/profile', {
             headers: {
-              Authorization: `Bearer ${token}`, // Send token with the request
+              Authorization: `Bearer ${token}`,
             },
           });
           setProfileData(response.data); // Update state with user profile data
@@ -31,7 +33,7 @@ const Profile = () => {
       } catch (error) {
         console.error('Error fetching profile data:', error);
       } finally {
-        setLoading(false); // Set loading to false after data is fetched
+        setLoading(false);
       }
     };
 
@@ -44,31 +46,83 @@ const Profile = () => {
     setProfileData({ ...profileData, [name]: value });
   };
 
+  // Handle image change
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileData((prevState) => ({ ...prevState, image: reader.result }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   // Toggle edit mode
   const toggleEditMode = () => {
+    if (isEditable) {
+      // Save the profile data when switching from edit to save
+      saveProfileData();
+    }
     setIsEditable(!isEditable);
+  };
+
+  // Save profile data to the backend
+  const saveProfileData = async () => {
+    const token = localStorage.getItem('userToken');
+    const formData = new FormData();
+    formData.append('name', profileData.name);
+    formData.append('email', profileData.email);
+    formData.append('gender', profileData.gender);
+    formData.append('country', profileData.country);
+    if (imageFile) {
+      formData.append('image', imageFile); // Append image if present
+
+    }
+
+    try {
+      const response = await axios.put('/api/profile', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      // Handle response (e.g., success message, etc.)
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error saving profile data:', error);
+    }
   };
 
   // Logout function to clear local storage and redirect user
   const handleLogout = () => {
-    localStorage.removeItem('userToken'); // Remove token from localStorage
-    window.location.href = '/login'; // Redirect to login page
+    localStorage.removeItem('userToken');
+    window.location.href = '/login';
+  };
+
+  // Handle navigation back to PaymentPage
+  const handleBackToPaymentPage = () => {
+    navigate('/payment'); // Navigate to CheckoutPage
   };
 
   if (loading) {
-    return <div>Loading...</div>; // Display loading message while fetching data
+    return <div>Loading...</div>;
   }
 
   return (
     <div className="profile-container">
+      <h2 className="profile-details-title" onClick={handleBackToPaymentPage}> ← My Profile</h2>
+
       <div className="profile-header">
         <img
-          src={profileData.image || 'https://via.placeholder.com/150'} // Default image if not provided
+          src={profileData.image || 'https://via.placeholder.com/150'}
           alt="Profile"
           className="profile-image"
         />
+      
         <button onClick={toggleEditMode} className="edit-button">
-          Edit
+          {isEditable ? 'Save' : 'Edit'}
         </button>
       </div>
 
@@ -134,7 +188,6 @@ const Profile = () => {
 
         <div className="payment-methods">
           <h4>Saved Payment Methods</h4>
-          {/* Assuming saved payment methods would be part of the profile data */}
           {profileData.paymentMethods && profileData.paymentMethods.length > 0 ? (
             profileData.paymentMethods.map((method, index) => (
               <div key={index} className="payment-method">

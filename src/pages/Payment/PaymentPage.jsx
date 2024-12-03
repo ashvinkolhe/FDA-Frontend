@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
@@ -5,7 +6,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Use the useNavigate hook
 import "./PaymentPage.css";
 
-const PaymentPage = ({ amountToPay = 240 }) => {
+const PaymentPage = ({ amountToPay }) => {
   const [selectedMethod, setSelectedMethod] = useState("");
   const [paymentAmount, setPaymentAmount] = useState(amountToPay);
   const navigate = useNavigate(); // Initialize the navigate function
@@ -28,14 +29,16 @@ const PaymentPage = ({ amountToPay = 240 }) => {
     navigate("/order"); // Correct usage of navigate
   };
 
+    // Handle navigation back to CheckoutPage
+    const handleBackToCheckout = () => {
+      navigate("/checkout"); // Navigate to CheckoutPage
+    };
   return (
     <div className="payment-page">
-      <header className="header">
-        <h1>Orderix</h1>
-      </header>
-
       <main>
-        <h2 className="payment-title">Choose and Pay</h2>
+      <h2 className="payment-title" onClick={handleBackToCheckout}>
+          ← Choose and Pay
+        </h2>
         <div className="payment-container">
           <div className="payment-methods">
             {paymentMethods.map((method) => (
@@ -60,7 +63,7 @@ const PaymentPage = ({ amountToPay = 240 }) => {
               </div>
             ))}
             <div className="add-card">
-              <span>+ Add Debit Card</span>
+              <span className="add-card-text">+ Add Debit Card</span>
             </div>
           </div>
 

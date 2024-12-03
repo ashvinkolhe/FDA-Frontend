@@ -24,7 +24,8 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/foodItems.json") // Replace with your API endpoint
+    // Fetch food items from JSON file or API
+    fetch("/foodItems.json")
       .then((response) => response.json())
       .then((data) => {
         setFoodItems(data);
@@ -34,6 +35,10 @@ const ProductPage = () => {
         setError("Error fetching food items");
         setLoading(false);
       });
+
+    // Retrieve cart data from local storage on page load
+    const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(storedCartItems);
   }, []);
 
   const getItemsByCategory = (category) => {
@@ -41,19 +46,17 @@ const ProductPage = () => {
   };
 
   const handleAddToCart = (item) => {
-    setCartItems((prevCartItems) => [...prevCartItems, item]);
+    // Add item to cart and update local storage
+    const updatedCart = [...cartItems, item];
+    setCartItems(updatedCart);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
   };
 
   const handleRemoveFromCart = (id) => {
-    setCartItems((prevCartItems) => {
-      const index = prevCartItems.findIndex((item) => item.id === id);
-      if (index > -1) {
-        const updatedCart = [...prevCartItems];
-        updatedCart.splice(index, 1);
-        return updatedCart;
-      }
-      return prevCartItems;
-    });
+    // Remove item from cart and update local storage
+    const updatedCart = cartItems.filter((item) => item.id !== id);
+    setCartItems(updatedCart);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
   };
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -61,7 +64,6 @@ const ProductPage = () => {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
-
 
   if (loading) {
     return <div className="loading-container">Loading...</div>;
@@ -73,45 +75,44 @@ const ProductPage = () => {
 
   return (
     <div className="product-page">
-{/* Banner Section */}
-<section className="banner">
-  <div className="banner-content">
-    <p>I'm lovin' it!</p>
-    <h1>McDonald’s East London</h1>
-    <div className="banner-details">
-      <div className="detail-item">
-        <img src={OrderCompleted} alt="Order Completed Icon" />
-        <p>Minimum Order: 12 GBP</p>
-      </div>
-      <div className="detail-item">
-        <img src={Motocross} alt="Motocross Icon" />
-        <p>Delivery in 20-25 Minutes</p>
-      </div>
-    </div>
-    <button className="banner-button">
-      <img src={Clock} alt="clock Icon" className="clock Icon" />
-      Open until 3:00 AM
-    </button>
-    <img src={Review} alt="Review Icon" className="banner-extra-info" />
-  </div>
-
-  <div className="banner-image-container">
-    <img src={BannerPP} alt="McDonald's" />
-  </div>
-</section>
+      {/* Banner Section */}
+      <section className="banner">
+        <div className="banner-content">
+          <p>I'm lovin' it!</p>
+          <h1>McDonald’s East London</h1>
+          <div className="banner-details">
+            <div className="detail-item">
+              <img src={OrderCompleted} alt="Order Completed Icon" />
+              <p>Minimum Order: 12 GBP</p>
+            </div>
+            <div className="detail-item">
+              <img src={Motocross} alt="Motocross Icon" />
+              <p>Delivery in 20-25 Minutes</p>
+            </div>
+          </div>
+          <button className="banner-button">
+            <img src={Clock} alt="clock Icon" className="clock Icon" />
+            Open until 3:00 AM
+          </button>
+          <img src={Review} alt="Review Icon" className="banner-extra-info" />
+        </div>
+        <div className="banner-image-container">
+          <img src={BannerPP} alt="McDonald's" />
+        </div>
+      </section>
 
       {/* Offers Header */}
       <div className="offers-header">
-  <h2>All Offers from McDonald’s East London</h2>
-  <div className="search-container">
-    <img src={  SearchMore} alt="Search Icon" className="search-icon" />
-    <input
-      type="text"
-      className="  search-bar"
-      placeholder="  Search from menu..."
-    />
-  </div>
-</div>
+        <h2>All Offers from McDonald’s East London</h2>
+        <div className="search-container">
+          <img src={SearchMore} alt="Search Icon" className="search-icon" />
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search from menu..."
+          />
+        </div>
+      </div>
 
       {/* Category Navigation */}
       <nav className="category-nav">
@@ -140,56 +141,34 @@ const ProductPage = () => {
         
       <DiscountCard/>
 
-      {/* Offers Section */}
+      {/* Product Sections */}
       <div className={`main-content ${cartItems.length > 0 ? "with-cart" : ""}`}>
         <div className="product-sections">
-          <section className="product-category">
-            <h2>Burgers</h2>
-            <div className="food-cards">
-              {getItemsByCategory("burger").map((item) => (
-                <ProductCard
-                  key={item.id}
-                  {...item}
-                  onAddToCart={() => handleAddToCart(item)}
-                />
-              ))}
-            </div>
-          </section>
-
-          <section className="product-category">
-            <h2>Fries</h2>
-            <div className="food-cards">
-              {getItemsByCategory("fries").map((item) => (
-                <ProductCard
-                  key={item.id}
-                  {...item}
-                  onAddToCart={() => handleAddToCart(item)}
-                />
-              ))}
-            </div>
-          </section>
-
-          <section className="product-category">
-            <h2>Cold Drinks</h2>
-            <div className="food-cards">
-              {getItemsByCategory("cold drinks").map((item) => (
-                <ProductCard
-                  key={item.id}
-                  {...item}
-                  onAddToCart={() => handleAddToCart(item)}
-                />
-              ))}
-            </div>
-          </section>
+          {["burger", "fries", "cold drinks"].map((category) => (
+            <section className="product-category" key={category}>
+              <h2>{category}</h2>
+              <div className="food-cards">
+                {getItemsByCategory(category).map((item) => (
+                  <ProductCard
+                    key={item.id}
+                    {...item}
+                    onAddToCart={() => handleAddToCart(item)}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </div>
 
+      {/* Cart Modal */}
       {cartItems.length > 0 && (
         <CartModal cartItems={cartItems} onRemoveItem={handleRemoveFromCart} />
       )}
-      <Timing/>
+
+      <Timing />
       <LocationMap />
-      <CustomerReviews/>
+      <CustomerReviews />
       <PopularRestaurants title="Similar Restaurants" />
     </div>
   );

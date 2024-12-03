@@ -15,8 +15,12 @@
 }
 
 .order-details {
+  cursor: pointer;
   text-align: center;
   margin-bottom: 20px;
+}
+.order-details-title{
+  ma
 }
 
 .order-container {

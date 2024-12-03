@@ -33,11 +33,16 @@ const CheckoutPage = ({ cartItems = [], onRemoveItem, onUpdateQuantity }) => {
     navigate("/payment"); // Redirect to PaymentPage
   };
 
+    // Handle navigation back to CheckoutPage
+    const handleBackToProductPage = () => {
+      navigate("/products"); // Navigate to CheckoutPage
+    };
+
   return (
     <div className="order-details">
       {/* Main Content Section */}
       <main>
-        <h2 className="order-details">Your Order Details</h2>
+        <h2 className="order-details-title" onClick={handleBackToProductPage}> ← Your Order Details</h2>
         <div className="order-container">
           {/* Order Items Section */}
           <div className="order-items">

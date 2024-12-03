@@ -4,7 +4,7 @@ import React from "react";
 import "./Timing.css";
 import Clock from "../../assets/Clock.svg";
 import Tracking from "../../assets/Tracking.svg";
-import IdVerified from "../../assets/IdVerified.svg";
+import IDVerified from "../../assets/IDVerified.svg";
 
 const AboutUs = () => {
   return (
@@ -27,7 +27,7 @@ const AboutUs = () => {
       </div>
       <div className="about-section">
         <h3>
-          <img src={IdVerified} alt="Contact" className="section-icon" />
+          <img src={IDVerified} alt="Contact" className="section-icon" />
           Contact Information
         </h3>
         <p>

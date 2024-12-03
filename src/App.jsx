@@ -22,8 +22,8 @@ const App = () => {
     <>
       {/* Conditionally render Header only if not on Login or Register page */}
       {!isAuthPage && <Header />}
+      
       <Routes>
-        
         {/* Redirect root URL to /login */}
         <Route path="/" element={<Navigate to="/login" />} />
         
@@ -38,7 +38,12 @@ const App = () => {
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/order" element={<OrderCompletedPage />} />
+
+        {/* Catch-all Route for any undefined paths */}
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
+
+      {/* Conditionally render Footer for all routes including Login and Register */}
       <Footer />
     </>
   );

@@ -18,7 +18,7 @@ const Login = () => {
     console.log('Login payload:', { email, password });
   
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://fda-backend-64r7.onrender.com/api/auth/login', {
         email,
         password,
       }, {

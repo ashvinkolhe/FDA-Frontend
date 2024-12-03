@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import Remove from "../../assets/Remove.svg";
 import "./CartModal.css";
 
 const CartModal = ({ cartItems = [], onRemoveItem }) => {
@@ -43,20 +44,22 @@ const CartModal = ({ cartItems = [], onRemoveItem }) => {
           <p>Your cart is empty</p>
         ) : (
           uniqueItems.map((item) => (
-            <div key={item.id} className="cart-item">
-              <div className="cart-item-info">
-                <span className="cart-item-title">
-                  {item.title} {item.quantity > 1 && `x${item.quantity}`}
-                </span>
-                <span className="cart-item-price">₹{item.price}</span>
-              </div>
-              <button
-                className="remove-item"
-                onClick={() => onRemoveItem(item.id)}
-              >
-                X
-              </button>
-            </div>
+<div key={item.id} className="cart-item">
+  <div className="cart-item-info">
+
+    {item.quantity > 1 && (
+      <span className="quantity-circle">{item.quantity}x</span>
+    )}    {item.title} 
+    <span className="cart-item-price">₹{item.price}</span>
+  </div>
+  <button
+    className="remove-item"
+    onClick={() => onRemoveItem(item.id)}
+  >
+    <img src={Remove} alt="Remove Item" className="remove-item-icon" />
+  </button>
+</div>
+
           ))
         )}
       </div>

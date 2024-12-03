@@ -110,3 +110,80 @@
     margin-top: -20px;
     padding: 5%;
 }
+/* General Mobile View Adjustments */
+@media (max-width: 768px) {
+    /* Login Container */
+    .login-container {
+        padding: 10px; /* Increase padding for smaller screens */
+        margin-top: 0;
+    }
+
+    /* Main Content Container */
+    .login-content {
+        width: 100%; /* Full width for mobile */
+        flex-direction: column; /* Stack the left and right containers vertically */
+        padding: 20px; /* Add padding around the content */
+    }
+
+    /* Left Container */
+    .login-left {
+        flex: none; /* Allow the left container to take full width */
+        padding: 20px;
+    }
+
+    /* Right Container */
+    .login-right {
+        flex: none; /* Allow the right container to take full width */
+        padding: 20px;
+        display: none; /* Hide the image section on mobile for better focus */
+    }
+
+    /* Login Form Styling */
+    .login-form {
+        width: 100%; /* Full width of the container */
+    }
+
+    .login-title {
+        font-size: 2rem; /* Smaller font size for mobile */
+        margin-bottom: 8px;
+    }
+
+    /* Styling for Inputs and Buttons */
+    .input-label {
+        font-size: 0.9rem; /* Smaller label font size */
+    }
+
+    .input-field {
+        padding: 12px; /* Increase padding for easier touch interaction */
+        font-size: 1rem; /* Larger text for mobile readability */
+    }
+
+    .login-button {
+        width: 100%; /* Full width button */
+        font-size: 1.1rem; /* Slightly larger button text */
+    }
+
+    .forgot-password {
+        font-size: 0.9rem; /* Adjust font size for better fit */
+        margin-left: 0; /* Remove large left margin */
+    }
+
+    .signup-text {
+        margin-left: 0; /* Remove large left margin */
+        text-align: center; /* Center the signup text */
+    }
+
+    .signup-link {
+        text-align: center;
+        display: block; /* Display as block for better spacing */
+    }
+
+    /* Image Styling */
+    .login-image img {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover;
+        margin-top: 0; /* Remove top margin */
+        padding: 0;
+    }
+}

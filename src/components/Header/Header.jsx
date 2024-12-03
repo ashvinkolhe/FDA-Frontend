@@ -1,7 +1,13 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+// Header.jsx
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import LOGO1 from "../../assets/LOGO1.svg";
+import MaleUser from "../../assets/MaleUser.svg";
+import ViewCart from "../../assets/ViewCart.svg";
+import CartBasket from "../../assets/CartBasket.svg";
+import Location from "../../assets/Location.svg";
 import "./Header.css";
 
 const Header = () => {
@@ -24,6 +30,11 @@ const Header = () => {
     navigate("/login");
   };
 
+  const   handleAddToCart = () => {
+    const product = { title, description, price, image };
+    onAddToCart(product);
+  };
+
   return (
     <>
       {/* Top Header Section */}
@@ -32,64 +43,66 @@ const Header = () => {
           🌟 Get 5% Off your first order, <strong>Promo: ORDER5</strong>
         </div>
         <div className="location">
-          📍 Regent Street, A4, A4201, London{" "}
+        <img src={Location} alt="Location" className="Location-icon" />
+           Regent Street, A4, A4201, London{" "}
           <a href="#change-location" className="change-location">
             Change Location
           </a>
         </div>
-        <button className="cart-button">
-          <i className="fas fa-shopping-cart"></i> My Cart
-        </button>
+        <div className="cart-container">
+          <button className="cart-button" onClick={handleAddToCart}>
+            <img src={CartBasket} alt="Cart Basket" className="cart-basket-icon" />
+            My Cart
+          </button>
+          <img
+            src={ViewCart}
+            alt="View Cart"
+            className="view-cart-icon"
+            onClick={handleAddToCart} // Navigate to cart page on click
+          />
+        </div>
       </div>
 
       {/* Main Header Section */}
       <header className="main-header">
         <div className="logo" onClick={() => navigate("/home")}>
-          Order<span className="logo-accent">UK</span>
+          <h1 className="logo">
+            <img src={LOGO1} alt="Logo" />
+          </h1>
         </div>
         <nav className="navigation">
           <ul>
             <li>
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
+              <Link to="/home" className="nav-link">Home</Link>
             </li>
             <li>
-              <a href="#browse-menu" className="nav-link">
-                Browse Menu
-              </a>
+              <Link to="/products" className="nav-link">Browse Menu</Link>
             </li>
             <li>
-              <a href="#special-offers" className="nav-link">
-                Special Offers
-              </a>
+              <Link to="/products" className="nav-link">Special Offers</Link>
             </li>
             <li>
-              <a href="#restaurants" className="nav-link">
-                Restaurants
-              </a>
+              <Link to="/products" className="nav-link">Restaurants</Link>
             </li>
             <li>
-              <a href="#track-order" className="nav-link">
-                Track Order
-              </a>
+              <Link to="/home" className="nav-link">Track Order</Link>
             </li>
           </ul>
         </nav>
         <div className="actions">
           {username ? (
-            <div className="user-actions" onClick={() => navigate("/profile")}>
-              <span className="greeting">Hey {username.charAt(0).toUpperCase() + username.slice(1)}</span>
-              <button className="logout-btn" onClick={handleLogout}>
+            <div className="user-actions">
+              <Link to="/profile" className="greeting-container">
+                <img src={MaleUser} alt="MaleUser" className="user-icon" />
+                <span className="greeting">Hey {username.charAt(0).toUpperCase() + username.slice(1)}</span>
+              </Link>
+              {/* <button className="logout-btn" onClick={handleLogout}>
                 Logout
-              </button>
+              </button> */}
             </div>
           ) : (
-            <button
-              className="login-btn"
-              onClick={() => navigate("/login")}
-            >
-              <i className="fas fa-user"></i> Login/Signup
+            <button className="login-btn" onClick={() => navigate("/login")}>
+              <i className="fas fa-user"></i> <img src={MaleUser} alt="MaleUser" /> Login/Signup
             </button>
           )}
         </div>

@@ -1,0 +1,76 @@
+/* AboutUs.css */
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px; /* Reduced padding for better fit */
+  background-color: #FBFBFB; /* Updated background color */
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensures sections are responsive */
+}
+
+.about-section,
+.Operational-section {
+  flex: 1 1 300px; /* Flexibility to allow wrapping on smaller screens */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.Operational-section {
+  background-color: #03081F;
+  color: #fff;
+}
+
+.about-section h3 {
+  font-size: 1.4rem; /* Slightly larger font for headings */
+  margin-bottom: 15px;
+  color: #333;
+  display: flex;
+  align-items: center; /* Aligning icon and title */
+}
+
+.about-section p,
+.about-section ul {
+  font-size: 1rem; /* Increased font size for readability */
+  color: #555;
+}
+
+.about-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
+
+.section-icon {
+  width: 28px; /* Adjust the size for better visibility */
+  height: 28px;
+  margin-right: 12px; /* Increased margin between icon and text */
+  vertical-align: middle;
+}
+
+/* Optional media query for better responsiveness on small screens */
+@media (max-width: 768px) {
+  .about-us {
+    flex-direction: column; /* Stack sections on smaller screens */
+    padding: 20px;
+  }
+
+  .about-section,
+  .Operational-section {
+    flex: 1 1 100%; /* Make each section take full width */
+    margin: 10px 0;
+  }
+
+  .section-icon {
+    width: 24px; /* Adjust icon size for smaller screens */
+    height: 24px;
+  }
+}

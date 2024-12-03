@@ -1,140 +1,180 @@
-/* General Styles */
-.banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #e8e2e2;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 60vh;
-  }
+/* Reset styles for Home page */
+.home {
+  background-color: #fff; /* White background for the Home page */
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Set a default font family */
   
-  /* Left Section */
-  .banner-left {
-    max-width: 50%;
-  }
-  
-  .banner-left h1 {
-    font-size: 2.5rem;
-    margin: 10px 0;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  
-  .banner-left h1 .highlight {
-    color: #ff7c00;
-  }
-  
-  .banner-left h2 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #555;
-  }
-  
-  .banner-left p {
-    margin: 10px 0;
-    font-size: 1rem;
-    color: #777;
-  }
-  
-  .banner-form {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .banner-form input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .banner-form .search-btn {
-    padding: 10px 20px;
-    background-color: #ff7c00;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .banner-form .search-btn:hover {
-    background-color: #e06700;
-  }
-  
-  /* Right Section */
-  .banner-right {
-    position: relative;
-    max-width: 45%;
-  }
-  
-  .banner-images {
-    display: flex;
-    gap: 10px;
-    margin-left: 50px;
-  }
-  
-  .banner-image {
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  }
-  
-  /* Order Notifications */
-  .order-notifications {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .notification {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .notification p {
-    margin: 0;
-  }
-  
-  .notification .order-title {
-    font-weight: bold;
-    color: #ff7c00;
-  }
-  
-  .notification span {
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-
-  .Order-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.Order-section img {
-    width: 100%;
-    height: auto;   
-    object-fit: cover;
+/* Banner Section */
+.home-banner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70vh;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+
+}
+
+/* Left Section (HomeBanner1 text and form) */
+.home-banner-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  position: relative;
+  padding-right: 20px;
+}
+
+.home-banner-left h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #555;
+}
+
+.home-banner-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-align: left; /* Align text left */
+
+}
+
+.home-banner-left h1 .highlight {
+  color: #ff7c00;
+}
+
+.home-banner-left p {
+  text-align: left; /* Align text left */
+}
+
+
+.home-banner-form {
+  display: flex;
+  justify-content: flex-start; /* Align form elements to the left */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+.home-banner-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.home-banner-form .search-btn {
+  padding: 10px 20px;
+  background-color: #ff7c00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.home-banner-form .search-btn:hover {
+  background-color: #e06700;
+}
+
+/* Right Section: Banner Images and Notifications */
+.home-banner-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 60%;
+  position: relative;
+  gap: 20px;
+}
+
+.home-banner-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-banner-image1-large {
+  width: 70%;
+  height: 55vh;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 420px;
+  margin-top: -2px;
+  z-index: 1;
+}
+
+.home-banner-image2-small {
+  width: 35%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 89px;
+}
+
+/* Order Notifications */
+.home-order-notifications {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 250px;
+}
+
+.home-notification {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-notification p {
+  margin: 0;
+}
+
+.home-notification .order-title {
+  font-weight: bold;
+  color: #ff7c00;
+}
+
+.home-notification span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Order Section */
+.home-order-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-order-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }

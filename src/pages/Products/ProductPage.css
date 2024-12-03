@@ -1,13 +1,123 @@
+/* Overall Layout */
 .product-page {
   display: flex;
   flex-direction: column;
 }
 
-.banner img {
-  width: 100%;
-  height: auto;
+/* Banner Section */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Fixed alignment for consistent positioning */
+  background: #03081FE5;
+  color: white;
+  padding: 40px;
+  padding-bottom: 70px; /* Keep consistent with text/image layout */
+  border-radius: 15px;
+  margin: 40px auto; /* Center align the banner */
+  width: 90%; /* Adjust for responsive layouts */
+  position: relative; /* For absolute positioning of child elements */
+  
 }
 
+.banner-content {
+  flex: 1; /* Ensure it shares space with the image */
+  max-width: 60%; /* Adjust width for better layout */
+  padding-right: 20px;
+}
+
+.banner h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #fff;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.banner-button {
+  position: absolute; /* Isolated for manual positioning */
+  bottom: -20px; /* Positioned at the bottom of the banner */
+  left: 0px; /* Slight left alignment */
+  background: #ff9900;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.banner-button img {
+  width: 18px;
+  margin-right: 8px;
+}
+
+.banner-image-container {
+  flex: 1; /* Share space equally with content */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 40%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover; /* Ensures consistent image appearance */
+}
+
+/* Extra Info Positioning */
+.banner-extra-info {
+  position: absolute;
+  bottom: 20px;
+  left: 740px; /* Positioned closer to the right */
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.banner-extra-info span {
+  color: #ff9900;
+}
+
+/* Banner Details Section */
+.banner-details {
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  gap: 60px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.detail-item p {
+  margin-left: 10px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.detail-item img {
+  width: 20px;
+}
+
+/* Main Content */
 .main-content {
   display: flex;
   flex-direction: row;
@@ -30,6 +140,75 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+}
+
+/* Offers Header */
+.offers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 30px;
+}
+
+.offers-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+}
+
+.search-icon {
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.search-bar {
+  padding: 12px 20px 12px 20px; /* Space for icon inside input */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  width: 250px;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #ff9900;
+}
+
+/* Category Navigation */
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #ff9900;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+
+.category-item {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  color: white;
+  transition: background 0.3s, color 0.3s;
+}
+
+.category-item:hover,
+.category-item.active {
+  background: #000000;
+  color: white;
 }
 
 /* Cart Modal */
@@ -63,11 +242,7 @@
   margin-bottom: 15px;
 }
 
-.cart-item-title {
-  font-size: 16px;
-  font-weight: bold;
-}
-
+.cart-item-title,
 .cart-item-price {
   font-size: 16px;
 }

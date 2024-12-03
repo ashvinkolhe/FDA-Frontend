@@ -1,4 +1,6 @@
 /* Header.css */
+
+/* Top Header Section */
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -7,6 +9,10 @@
   background-color: #f9f9f9;
   font-size: 0.9rem;
   color: #333;
+  width: 1450px;
+  margin-left: 40px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .promo {
@@ -29,18 +35,44 @@
   text-decoration: underline;
 }
 
+.cart-container {
+  position: relative; /* Ensure the absolute positioning inside it */
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between the basket and view cart */
+}
+
 .cart-button {
   background-color: green;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   font-weight: bold;
   cursor: pointer;
   display: flex;
   align-items: center;
+  width: 210px; /* Adjusted width */
+  position: relative;
 }
 
+.cart-basket-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.view-cart-icon {
+  position: absolute; /* Position it inside the green box */
+  right: 10px; /* Space from the right edge of the cart button */
+  top: 50%; /* Center it vertically */
+  transform: translateY(-50%); /* Correct the vertical alignment */
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Main Header Section */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -48,16 +80,14 @@
   padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 80px;
+  margin-bottom: 20px;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
-}
-
-.logo-accent {
-  color: orange;
 }
 
 .navigation ul {
@@ -72,20 +102,92 @@
   font-weight: 500;
 }
 
-.login-btn,
+.nav-link:hover {
+  color: orange;
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between elements */
+}
+
+/* Login Button */
+.login-btn {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem; /* Padding for consistent spacing */
+  font-weight: bold;
+  cursor: pointer;
+  gap: 0.5rem; /* Space between the icon and text */
+}
+
+.login-btn:hover {
+  background-color: #333;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* User Actions (Logged-in State) */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between greeting container and logout button */
+}
+
+.greeting-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #000;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline from the link */
+  color: white; /* Maintain text color */
+}
+
+.greeting-container:hover {
+  background-color: #333;
+  text-decoration: none; /* Ensure no underline appears on hover */
+}
+
+.greeting-container:focus,
+.greeting-container:active {
+  text-decoration: none; /* Prevent underline on focus or active state */
+}
+
+.greeting {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Logout Button */
 .logout-btn {
   background-color: #000;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem; /* Consistent padding */
+  font-weight: bold;
   cursor: pointer;
 }
 
-.greeting {
-  margin-right: 1rem;
-}
-
-.user-actions{
-  cursor: pointer;
+.logout-btn:hover {
+  background-color: #333;
 }

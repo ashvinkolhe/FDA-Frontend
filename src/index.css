@@ -3,8 +3,7 @@ html, body {
   padding: 0;
   height: 100%; /* Ensure the body takes the full viewport height */
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  font-family: Arial, sans-serif;
-  
+  font-family: Arial, sans-serif;  
 }
 
 * {

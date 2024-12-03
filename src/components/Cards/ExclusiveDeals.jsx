@@ -46,6 +46,15 @@ const ExclusiveDeals = () => {
             <span>-17%</span> */}
           </div>
         </div>
+
+        {/* Card 4*/}
+        <div className="card">
+          <img src={restaurant2} alt="Grand Ai Cafe London" />
+          <div className="card-content">
+            {/* <h3>Grand Ai Cafe London</h3>
+            <span>-20%</span> */}
+          </div>
+        </div>
       </div>
     </div>
   );

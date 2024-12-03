@@ -59,6 +59,16 @@
   
   .coupon-section {
     margin: 15px 0;
+    border: 2px solid #fff; /* White border around each item */
+    border-radius: 30px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background for contrast */ 
+  }
+
+  .coupon-section .coupon-section2 {
+    margin: 15px 0;
+    border: 2px solid #fff; /* White border around each item */
+    border-radius: 30px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background for contrast */ 
   }
   
   .coupon-section label {
@@ -109,4 +119,39 @@
     background-color: gray;
     cursor: not-allowed;
   }
+  .share-section {
+    display: flex;
+    align-items: center;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
   
+  .share-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .share-text span {
+    display: block;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  }
+  
+  .copylink {
+    background-color: white;
+    color: orange;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .copylink:hover {
+    background-color: #f2f2f2;
+  }

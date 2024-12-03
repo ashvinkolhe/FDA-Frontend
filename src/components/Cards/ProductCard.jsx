@@ -2,9 +2,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./ProductCard.css";
+import AddToCart from "../../assets/AddToCart.svg";
 
 const ProductCard = ({ title, description, price, image, onAddToCart }) => {
-  const handleAddToCart = () => {
+  const   handleAddToCart = () => {
     const product = { title, description, price, image };
     onAddToCart(product);
   };
@@ -21,7 +22,7 @@ const ProductCard = ({ title, description, price, image, onAddToCart }) => {
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="product-card-add-to-cart" onClick={handleAddToCart}>
-          <img src="add-to-cart-icon.png" alt="Add to Cart" />
+          <img src= {AddToCart} alt="Add to cart" />
         </div>
       </div>
     </div>

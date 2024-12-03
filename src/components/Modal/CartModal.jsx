@@ -29,6 +29,14 @@ const CartModal = ({ cartItems = [], onRemoveItem }) => {
 
   return (
     <div className="cart-modal">
+            <div className="share-section">
+        <div className="share-text">
+          <span>Share this cart</span>
+          <br />
+          <span>with your friends</span>
+        </div>
+        <button className="copylink">Copy Link</button>
+      </div>
       <h2 className="cart-title">My Basket</h2>
       <div className="cart-items">
         {uniqueItems.length === 0 ? (
@@ -53,7 +61,7 @@ const CartModal = ({ cartItems = [], onRemoveItem }) => {
         )}
       </div>
       <div className="coupon-section">
-        <label htmlFor="coupon-code">Choose your free item..</label>
+        <label htmlFor="coupon-code" className="coupon-section2">Choose your free item..</label>
         <input
           type="text"
           id="coupon-code"

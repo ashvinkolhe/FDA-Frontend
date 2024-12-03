@@ -7,7 +7,6 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import ProductPage from "./pages/Products/ProductPage";
-import CartManagement from "./pages/Cart/CartManagement";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import PaymentPage from "./pages/Payment/PaymentPage";
 import ProfilePage from "./pages/Profile/ProfilePage";
@@ -35,7 +34,6 @@ const App = () => {
         {/* Main Application Routes */}
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<ProductPage />} />
-        <Route path="/cart" element={<CartManagement />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/profile" element={<ProfilePage />} />

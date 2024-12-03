@@ -9,50 +9,50 @@ import PopularCategories from "../../components/Cards/PopularCategories";
 import PopularRestaurants from "../../components/Cards/PopularRestaurants";
 import KnowMore from "../../components/AboutUs/KnowMore";
 
-
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       {/*  Banner Section */}
-      <section className="banner">
-        <div className="banner-left">
+      <section className="home-banner">
+        <div className="home-banner-left">
           <h2>Order Restaurant food, takeaway and groceries.</h2>
           <h1>
             Feast Your Senses, <span className="highlight">Fast and Fresh</span>
           </h1>
           <p>Enter a postcode to see what we deliver</p>
-          <form className="banner-form">
+          <form className="home-banner-form">
             <input type="text" placeholder="e.g. EC4R 3TE" />
             <button type="submit" className="search-btn">
               Search
             </button>
           </form>
         </div>
-        <div className="banner-right">
-          <div className="banner-images">
+        <div className="home-banner-right">
+          <div className="home-banner-images">
             <img
               src={HomeBanner1}
               alt="Woman eating pizza"
-              className="banner-image"
+              className="home-banner-image1-large"
             />
             <img
               src={HomeBanner2}
               alt="Woman eating noodles"
-              className="banner-image"
+              className="home-banner-image2-small"
             />
           </div>
-          <div className="order-notifications">
-            <div className="notification">
+
+          <div className="home-order-notifications">
+            <div className="home-notification">
               <p className="order-title">Order</p>
               <p>We’ve Received your order!</p>
               <span>Awaiting Restaurant acceptance</span>
             </div>
-            <div className="notification">
+            <div className="home-notification">
               <p className="order-title">Order</p>
               <p>Order Accepted! ✅</p>
               <span>Your order will be delivered shortly</span>
             </div>
-            <div className="notification">
+            <div className="home-notification">
               <p className="order-title">Order</p>
               <p>Your rider’s nearby 🎉</p>
               <span>They’re almost there – get ready!</span>
@@ -64,21 +64,18 @@ const Home = () => {
       {/* Categories Section */}
       <ExclusiveDeals />
 
-            {/* Categories Section */}
-      <PopularCategories/>  
+      {/* Categories Section */}
+      <PopularCategories/>
 
       {/* Popular Restaurants Section */}
-      
       <PopularRestaurants title="Popular Restaurants" />
 
-
-          <section className="Order-section">
-            <img src={OrderingApp} alt="OrderingApp" />
-          </section>
+      <section className="home-order-section">
+        <img src={OrderingApp} alt="OrderingApp" />
+      </section>
 
       {/* Promotional Section */}
-      <KnowMore/>
-
+      <KnowMore />
     </div>
   );
 };

@@ -271,3 +271,109 @@
 .checkout-button:hover {
   background-color: #218838;
 }
+/* General styles for the payment page */
+@media (max-width: 768px) {
+  .payment-page {
+    padding: 10px; /* Reduced padding for mobile */
+  }
+
+  /* Header */
+  .header {
+    flex-direction: column; /* Stack header items vertically */
+    padding: 10px 0;
+  }
+
+  main {
+    padding: 10px; /* Reduced padding for mobile */
+  }
+
+  /* Payment container */
+  .payment-container {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Reduced gap for mobile */
+  }
+
+  /* Payment methods */
+  .payment-methods {
+    flex: none;
+    width: 100%; /* Take full width on mobile */
+  }
+
+  .payment-method {
+    flex-direction: column; /* Stack payment method items vertically */
+    padding: 15px; /* Increased padding for better touch targets */
+    margin-bottom: 15px; /* Reduced margin */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .payment-method.selected {
+    border-color: orange;
+    background-color: #f9f4eb;
+  }
+
+  .payment-method input {
+    margin-right: 0;
+    margin-bottom: 10px; /* Adjust input margin */
+  }
+
+  /* Add Card */
+  .add-card {
+    padding: 15px;
+    border: 1px dashed #ddd;
+    border-radius: 5px;
+    text-align: center;
+    color: #888;
+    cursor: pointer;
+  }
+
+  /* Add card text */
+  .add-card-text {
+    text-align: start;
+    margin-right: 0; /* Adjusted for mobile */
+  }
+
+  /* Payment summary */
+  .payment-summary {
+    width: 100%; /* Take full width on mobile */
+    padding: 15px; /* Reduced padding */
+  }
+
+  .payment-summary div {
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  .payment-summary label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .payment-summary input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    margin-bottom: 10px; /* Adjusted margin */
+  }
+
+  /* Proceed button */
+  .proceed-button {
+    width: 100%; /* Full width on mobile */
+    padding: 15px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 10px 0;
+    background-color: #f8f8f8;
+    margin-top: 20px;
+  }
+}

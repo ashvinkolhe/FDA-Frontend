@@ -83,4 +83,82 @@
   .back-home-btn:hover {
     background-color: #e08600;
   }
-  
+  /* General styles for the overall container */
+@media (max-width: 768px) {
+  /* Order Completed Container */
+  .order-completed-container {
+    flex-direction: column; /* Stack elements vertically */
+    margin-bottom: 50px; /* Reduced margin on mobile */
+    padding: 20px; /* Add padding for better spacing on small screens */
+  }
+
+  /* Main Box Styling */
+  .order-completed-box {
+    width: 100%; /* Take full width on mobile */
+    padding: 20px; /* Adjust padding for smaller screens */
+    margin-top: 20px; /* Reduce margin on mobile */
+  }
+
+  /* Success Icon */
+  .success-icon {
+    width: 80px; /* Smaller icon size */
+    height: 80px; /* Adjust icon size */
+    margin-bottom: 15px; /* Adjust spacing */
+    box-shadow: 0 0 15px 3px rgba(76, 175, 80, 0.6),
+                0 0 30px 7px rgba(76, 175, 80, 0.4),
+                0 0 45px 10px rgba(76, 175, 80, 0.2); /* Adjust glow for mobile */
+  }
+
+  /* Optional hover effect (unchanged) */
+  .success-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Title */
+  h1 {
+    font-size: 1.2rem; /* Adjust font size */
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  /* Description text */
+  p {
+    font-size: 0.9rem; /* Smaller text size */
+    color: #555;
+    margin-bottom: 10px; /* Adjust spacing */
+  }
+
+  /* Order ID Styling */
+  .order-id {
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 10px; /* Adjust margin for mobile */
+  }
+
+  /* Ordered Items List */
+  .order-items {
+    margin: 15px 0; /* Reduce margin */
+  }
+
+  .order-item {
+    font-size: 0.9rem; /* Adjust font size */
+    color: #333;
+    margin-bottom: 5px; /* Adjust spacing */
+  }
+
+  /* Back to Home Button */
+  .back-home-btn {
+    width: 100%; /* Full-width button on mobile */
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center; /* Center align text */
+  }
+
+  .back-home-btn:hover {
+    background-color: #e08600;
+  }
+}

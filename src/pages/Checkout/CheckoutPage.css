@@ -126,3 +126,111 @@
 h2{
   text-align: start;
 }
+
+/* General Mobile View Adjustments */
+@media (max-width: 768px) {
+
+  /* Order Details Container */
+  .order-details {
+      padding: 10px; /* Reduce padding for smaller screens */
+      font-size: 0.9rem; /* Adjust font size for readability */
+  }
+
+  /* Header */
+  .header {
+      flex-direction: column; /* Stack elements vertically */
+      padding: 10px;
+  }
+
+  /* Main Container */
+  .main {
+      padding: 15px; /* Reduced padding for mobile */
+  }
+
+  /* Order Details Section */
+  .order-details {
+      text-align: left;
+      margin-bottom: 15px;
+  }
+
+  .order-container {
+      flex-direction: column; /* Stack order items and summary vertically */
+      gap: 10px; /* Reduced gap */
+  }
+
+  /* Order Items */
+  .order-items {
+      flex: none; /* Allow order items to take full width */
+  }
+
+  .order-item {
+      flex-direction: column; /* Stack image and details vertically */
+      gap: 10px; /* Reduced gap */
+      padding: 15px 0;
+  }
+
+  .order-item-image {
+      width: 60px; /* Smaller image */
+      height: 60px;
+      margin-bottom: 10px; /* Add space between image and details */
+  }
+
+  .order-item-details {
+      flex: none;
+      text-align: left;
+  }
+
+  .quantity-container {
+      flex-direction: row; /* Keep quantity buttons in a row */
+      gap: 8px; /* Adjust gap for mobile */
+  }
+
+  .quantity-container button {
+      width: 30px;
+      height: 30px;
+      padding: 6px;
+  }
+
+  .remove-item {
+      padding: 6px 12px;
+      font-size: 14px; /* Slightly smaller text for mobile */
+  }
+
+  /* Order Summary */
+  .order-summary {
+      flex: none; /* Allow summary to take full width */
+      padding: 15px;
+  }
+
+  /* Address Section */
+  .address-section input {
+      padding: 8px;
+      font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .summary-details {
+      margin-bottom: 15px;
+  }
+
+  .summary-details div {
+      margin-bottom: 8px; /* Reduced margin */
+  }
+
+  /* Payment Button */
+  .payment-button {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px; /* Adjust font size */
+  }
+
+  /* Footer */
+  .footer {
+      padding: 15px;
+  }
+
+  /* Heading */
+  h2 {
+      text-align: left; /* Align text left */
+      font-size: 1.5rem; /* Adjust font size */
+  }
+}

@@ -110,3 +110,88 @@
     margin-top: -20px;
     padding: 5%;
 }
+@media only screen and (max-width: 768px) {
+
+    /* Login Container */
+    .login-container {
+      padding: 10px;
+    }
+  
+    /* Main Content Container */
+    .login-content {
+      flex-direction: column; /* Stack the left and right sections vertically */
+      width: 90%; /* Adjust the width for mobile */
+    }
+  
+    /* Left Container */
+    .login-left {
+      padding: 20px; /* Reduce padding */
+      width: 100%; /* Take full width on mobile */
+      justify-content: flex-start; /* Align content at the top */
+    }
+  
+    /* Login Form Styling */
+    .login-form {
+      width: 100%; /* Full width for the form */
+    }
+  
+    .login-title {
+      font-size: 1.8rem; /* Adjust title font size */
+      text-align: center; /* Center the title */
+      margin-bottom: 10px;
+    }
+  
+    /* Input and Button Styling */
+    .input-label {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+  
+    .input-field {
+      padding: 12px;
+      font-size: 1rem; /* Adjust input size for mobile */
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .forgot-password {
+      font-size: 1rem;
+      margin-left: 0; /* Remove left margin */
+      text-align: center; /* Center the forgot password link */
+      display: block;
+    }
+  
+    .login-button {
+      font-size: 1.1rem;
+      padding: 12px;
+      border-radius: 15px; /* More rounded button for mobile */
+    }
+  
+    .signup-text {
+      font-size: 0.9rem;
+      text-align: center; /* Center the signup text */
+      margin-left: 0; /* Remove left margin */
+    }
+  
+    .signup-link {
+      font-size: 1rem; /* Adjust link size */
+    }
+  
+    /* Right Container */
+    .login-right {
+      padding: 10px;
+      width: 100%; /* Full width on mobile */
+      display: none; /* Hide the image container on mobile */
+    }
+  
+    /* Image Styling */
+    .login-image img {
+      width: 100%; /* Ensure the image is fully responsive */
+      height: auto;
+      object-fit: cover;
+      margin-top: 0;
+      padding: 0;
+    }
+  
+  }
+  

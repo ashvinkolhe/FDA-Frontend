@@ -124,3 +124,75 @@
   margin-top: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+
+  /* Profile Container */
+  .profile-container {
+    margin-left: 0; /* Remove the large margin for mobile */
+    padding: 15px;
+  }
+
+  /* Profile Title */
+  .profile-details-title {
+    font-size: 20px;
+  }
+
+  /* Profile Header */
+  .profile-header {
+    flex-direction: column; /* Stack the image and button vertically */
+    align-items: flex-start;
+  }
+
+  .profile-header img {
+    width: 60px;
+    height: 60px;
+    margin-right: 0; /* Remove margin between image and button */
+    margin-bottom: 10px; /* Add space below the image */
+  }
+
+  .edit-button {
+    margin-left: 0; /* Remove the large margin for mobile */
+    align-self: center; /* Center the button */
+    padding: 8px 16px;
+  }
+
+  /* Profile Info Grid */
+  .profile-info {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    gap: 15px;
+  }
+
+  /* Profile Fields */
+  .profile-field input,
+  .profile-field select {
+    width: 100%; /* Ensure inputs take full width */
+  }
+
+  .profile-field label {
+    font-size: 12px; /* Smaller font size */
+  }
+
+  /* Saved Payment Methods */
+  .saved-payment-methods {
+    margin-top: 20px;
+  }
+
+  .payment-method {
+    padding: 10px 15px;
+  }
+
+  .payment-method span {
+    font-size: 12px;
+  }
+
+  .payment-method button {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  /* Logout Button */
+  .logout-btn {
+    padding: 12px 18px;
+  }
+
+}
